@@ -751,6 +751,111 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-04-10 00:00:00+00:00">April 10, 2026</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="450"><a class="toclink" href="2026/04/10/4.5.0/">4.5.0</a></h2>
+<p>FactionsUUID 4.5.0 contains the following changes:</p>
+<h4 id="reworked-warp-gui"><a class="toclink" href="2026/04/10/4.5.0/#reworked-warp-gui">Reworked Warp GUI</a></h4>
+<ul>
+<li>Now, <code>/f warp</code> will display a Dialog listing warps by name.</li>
+<li>Password-protected warps will result in a new Dialog asking for the password.</li>
+<li>On Spigot, the command will just list warp names, because the ugly inventory GUI code has been removed.</li>
+</ul>
+<h4 id="other-changes"><a class="toclink" href="2026/04/10/4.5.0/#other-changes">Other Changes</a></h4>
+<ul>
+<li>Empty messages from <code>translations.conf</code> will no longer be sent.</li>
+<li>The <code>if</code> tags (e.g. <code>&lt;fuuid:if_econ&gt;</code>) can now be used on nearly anything in <code>translations.conf</code>.</li>
+<li>Added new tag <code>&lt;fuuid:if_perm:PERMISSION&gt;</code> to gate <code>translations.conf</code> content behind permission nodes.</li>
+<li>Many commands can now be renamed.</li>
+<li>Added player title limit, <code>titleLengthMax</code>, in <code>main.conf</code>.</li>
+<li>Player titles can be configured to continue formatting into username.<ul>
+<li><code>playerTitleColorContinuesIntoName</code> in <code>translations.conf</code>.</li>
+</ul>
+</li>
+<li>Fixed bug potentially causing autoclaim to trigger for staff not in a faction.</li>
+<li>Fixed error in DTR claim upgrade giving wrong amounts.</li>
+</ul>
+<h4 id="translation-changes"><a class="toclink" href="2026/04/10/4.5.0/#translation-changes">Translation Changes</a></h4>
+<p>The below translations have been moved from lang.yml to translations.conf and must be edited.<br>
+Their originals <em>should</em> still remain in lang.yml for reference, but backups are recommended.</p>
+<ul>
+<li>Economy messages (e.g. "You gained $30 for unclaiming land").</li>
+<li>Compass directions (e.g. N, S, E, W) for the map command.</li>
+<li>Permissible action translations (e.g. "build" / "Building blocks").</li>
+<li>Denials of:<ul>
+<li>Permission (e.g. "You cannot <action> in the wilderness.").</li>
+<li>PVP (e.g. "You cannot hurt <target>.").</li>
+<li>Item use (e.g. "You cannot use <thing> in a safe zone.").</li>
+</ul>
+</li>
+<li>Commands:<ul>
+<li><code>disband</code></li>
+<li><code>join</code></li>
+<li><code>near</code></li>
+<li><code>relation</code></li>
+<li><code>shield</code></li>
+</ul>
+</li>
+<li>Admin commands:<ul>
+<li>DTR</li>
+<li>Force join and force home</li>
+<li>TNT</li>
+<li>Bypass</li>
+<li>Chat spy</li>
+<li>Money commands</li>
+<li>Reload</li>
+<li>Save-all</li>
+</ul>
+</li>
+<li>Enter titles (the popup when walking into differently-owned territory).</li>
+</ul>
+<h4 id="developer-api"><a class="toclink" href="2026/04/10/4.5.0/#developer-api">Developer API</a></h4>
+<ul>
+<li>Rearranged some loading logic, which should result in no change for 3rd party plugins.<ul>
+<li>Please reach out if you run into any issues!</li>
+</ul>
+</li>
+<li>Introduced some non-<code>TL</code> paying methods in <code>Sender</code>.</li>
+<li>Deprecated a bunch more things that will be removed in version <code>5.0</code>.<ul>
+<li>Also updated many existing deprecation annotations to indicate removal.</li>
+</ul>
+</li>
+<li>Removed the internal <code>Tag</code> classes, which nobody should have been using.</li>
+<li>Be aware that the <code>TL</code> class will continue to lose items over time. It should not be referenced.</li>
+</ul>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="/assets/images/mbax.png" alt="mbaxter">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2025-12-04 00:00:00+00:00">December 4, 2025</time></li>
         
         
@@ -776,8 +881,10 @@
 </ul>
 <h4 id="developer-api"><a class="toclink" href="2025/12/04/4.4.0/#developer-api">Developer API</a></h4>
 <ul>
-<li>Added <code>ExternalChecks.registerTeleport</code> method for 3rd party plugins to register a teleport mechanism.</li>
+<li>Added <code>ExternalChecks.registerTeleport</code> method for 3rd party plugins to register a teleport mechanism.<ul>
 <li>The EssX integration now uses this, so it will be properly bumped out by another plugin.</li>
+</ul>
+</li>
 <li>Flagged some more obviously internal stuff with <code>@ApiStatus.Internal</code> annotations.</li>
 <li>Actually pushed 4.4.0 to the maven repo.</li>
 </ul>
