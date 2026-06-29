@@ -1194,9 +1194,7 @@ smaller - if a faction had 3 vaults and there are two upgrades offering 2 and 4,
 </ul>
 <h3 id="remaining-changes">Remaining Changes<a class="headerlink" href="#remaining-changes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>The "damage attempted" warning normally sent to a defender is now suppressed when the attacker is vanished.</li>
-<li>
-<ul>
+<li>The "damage attempted" warning normally sent to a defender is now suppressed when the attacker is vanished.<ul>
 <li>Controlled by <code>disableNotificationWhenAttackerVanished</code> in <code>main.conf</code> (default <code>true</code>).</li>
 </ul>
 </li>
@@ -1207,14 +1205,18 @@ smaller - if a faction had 3 vaults and there are two upgrades offering 2 and 4,
 <h3 id="developer-api">Developer API<a class="headerlink" href="#developer-api" title="Permanent link">&para;</a></h3>
 <p>Some highlights:</p>
 <ul>
-<li>Added <code>Participator#describeTo(Participator)</code>.</li>
+<li>Added <code>Participator#describeTo(Participator)</code>.<ul>
 <li>Provides relation-colored faction tag or player name with title for same-faction or faction tag for non-same faction.</li>
 <li>Same output you get from the <code>&lt;faction&gt;</code> and <code>&lt;player&gt;</code> tag defaults.</li>
+</ul>
+</li>
 <li>Added component method for adding faction announcements. Deprecated the legacy one, finally.</li>
 <li>Added <code>Faction#clearInvites()</code> and made <code>invites()</code> return a copy.</li>
 <li>Added <code>Faction#inviteExpiry(FPlayer)</code>.</li>
-<li>Deprecated Relation and Role public fields. You should immediately move to using the methods <code>translation()</code> and <code>value()</code>.</li>
+<li>Deprecated Relation and Role public fields. You should immediately move to using the methods <code>translation()</code> and <code>value()</code>.<ul>
 <li>The <code>nicename</code> field is now always equal to <code>name()</code> until removal.</li>
+</ul>
+</li>
 <li>Deprecated the entirety of <code>RelationUtil</code>.</li>
 <li>Deprecated <code>Faction#maxVaults(int)</code> which now does nothing. </li>
 </ul>
